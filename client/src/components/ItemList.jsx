@@ -1,6 +1,6 @@
 export default function ItemList({ items, refresh }) {
     const deleteItem = async (id) => {
-        await fetch(`http://localhost:5000/api/items/${id}`, {
+        await fetch(`https://projek-test.vercel.app/api/items${id}`, {
             method: "DELETE",
         });
         refresh();

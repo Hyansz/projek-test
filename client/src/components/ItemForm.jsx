@@ -5,7 +5,7 @@ export default function ItemForm({ refresh }) {
 
     const addItem = async (e) => {
         e.preventDefault();
-        await fetch("http://localhost:5000/api/items", {
+        await fetch("https://projek-test.vercel.app/api/items", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name }),

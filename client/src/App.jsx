@@ -12,8 +12,10 @@ export default function App() {
 
     const fetchItems = async () => {
         setLoading(true);
+        setStatusMsg("Mohon Tunggu...");
         const res = await api.get("/");
         setItems(res.data);
+        setTimeout(() => setStatusMsg(""));
         setLoading(false);
     };
 

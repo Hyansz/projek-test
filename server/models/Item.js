@@ -1,18 +1,10 @@
-import { DataTypes } from "sequelize";
-import db from "../database.js";
+import mongoose from "mongoose";
 
-const Item = db.define(
-    "items",
+const itemSchema = new mongoose.Schema(
     {
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+        name: { type: String, required: true },
     },
     { timestamps: true }
 );
 
-// otomatis membuat tabel jika belum ada
-// await Item.sync();
-
-export default Item;
+export default mongoose.model("Item", itemSchema, "db_item");
